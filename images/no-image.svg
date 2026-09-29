@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f0f6f3"/>
+  <rect x="150" y="92" width="100" height="76" rx="10" fill="none" stroke="#9cc5b0" stroke-width="6"/>
+  <circle cx="200" cy="130" r="20" fill="none" stroke="#9cc5b0" stroke-width="6"/>
+  <rect x="168" y="82" width="28" height="14" rx="4" fill="#9cc5b0"/>
+  <text x="200" y="214" text-anchor="middle" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP','Meiryo',sans-serif" font-size="22" font-weight="700" fill="#6c9a83">写真準備中</text>
+</svg>

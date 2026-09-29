@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaf3fa"/>
+      <stop offset="1" stop-color="#f4faf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="520" fill="url(#sky)"/>
+  <!-- 太陽 -->
+  <circle cx="500" cy="120" r="56" fill="#fff4d6"/>
+  <circle cx="500" cy="120" r="38" fill="#ffe6a3"/>
+  <!-- 雲 -->
+  <g fill="#fff">
+    <ellipse cx="150" cy="110" rx="60" ry="22"/>
+    <ellipse cx="185" cy="96" rx="38" ry="24"/>
+    <ellipse cx="380" cy="70" rx="40" ry="14"/>
+  </g>
+  <!-- 丘 -->
+  <path d="M0 380 C120 320 240 330 340 360 C440 390 540 350 640 320 V520 H0Z" fill="#cfe9da"/>
+  <path d="M0 430 C140 390 260 410 380 430 C480 446 560 420 640 400 V520 H0Z" fill="#a9d6bc"/>
+  <!-- 木 -->
+  <rect x="96" y="300" width="10" height="70" rx="4" fill="#8fb9a2"/>
+  <circle cx="101" cy="290" r="34" fill="#7cc19b"/>
+  <rect x="548" y="270" width="10" height="70" rx="4" fill="#8fb9a2"/>
+  <circle cx="553" cy="262" r="28" fill="#6fb38f"/>
+  <!-- 歩く人 -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="300" cy="196" r="24" fill="#2a7d56" stroke="none"/>
+    <path d="M296 230 L286 318" stroke="#2a7d56" stroke-width="22"/>
+    <path d="M292 244 L258 286" stroke="#2e6fa3" stroke-width="14"/>
+    <path d="M294 244 L330 278" stroke="#2e6fa3" stroke-width="14"/>
+    <path d="M286 318 L256 394" stroke="#2a7d56" stroke-width="16"/>
+    <path d="M286 318 L322 390" stroke="#2a7d56" stroke-width="16"/>
+  </g>
+  <!-- 葉っぱ -->
+  <g fill="#7cc19b">
+    <path d="M400 250c0-22 16-36 40-36 0 22-16 36-40 36z"/>
+    <path d="M420 290c0-18 12-28 30-28 0 18-12 28-30 28z" fill="#a9d6bc"/>
+  </g>
+</svg>
