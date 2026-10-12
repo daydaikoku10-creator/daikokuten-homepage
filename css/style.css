@@ -677,7 +677,8 @@ body.is-menu-open {
 }
 
 .equipment-photo {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1; /* 縦長・横長どちらの写真も収まりやすい正方形 */
+  overflow: hidden;
   background: var(--bg-tint);
 }
 
@@ -1003,6 +1004,10 @@ body.is-menu-open {
 .recruit-grid {
   display: grid;
   gap: 24px;
+  margin-bottom: 40px;
+}
+
+.recruit-detail {
   margin-bottom: 40px;
 }
 

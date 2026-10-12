@@ -137,8 +137,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------------------------------------------------------
      5. お問い合わせフォームの送信
-        form の action に送信先（Formspree など）のURLを入れると送信できます。
-        URLに「XXXXXXXX」が残っている間は「準備中」のメッセージを出します。
+        form の action に送信先（Formspree など）のURLを入れると、ページ上で送信できます。
+        URLに「XXXXXXXX」が残っている間は、data-mailto に書いたメールアドレス宛てに
+        入力内容を書き込んだメールを作成します（利用者のメールアプリが開きます）。
      --------------------------------------------------------- */
   var form = document.getElementById('contact-form');
   var statusBox = document.getElementById('form-status');
@@ -179,7 +180,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var action = form.getAttribute('action') || '';
       if (action.indexOf('XXXXXXXX') !== -1) {
-        showStatus('ただいまフォームは準備中です。お手数ですが、お電話にてお問い合わせください。', 'error');
+        var mailto = form.dataset.mailto;
+        if (!mailto) {
+          showStatus('ただいまフォームは準備中です。お手数ですが、お電話にてお問い合わせください。', 'error');
+          return;
+        }
+        // 入力内容をメール本文にまとめて、メールアプリを開く
+        var lines = [];
+        new FormData(form).forEach(function (value, key) {
+          lines.push('■' + key + '\n' + value + '\n');
+        });
+        var subject = '【ホームページからのお問い合わせ】' + (typeSelect ? typeSelect.value : '');
+        window.location.href = 'mailto:' + mailto +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(lines.join('\n'));
+        showStatus('メールアプリが開きます。内容をご確認のうえ、送信してください。メールアプリが開かない場合は、お電話でお問い合わせください。', 'success');
         return;
       }
 
